@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  exporter:
+    image: ekofr/pihole-exporter:latest
+    networks:
+      - piholenet
+    environment:
+      - PIHOLE_HOSTNAME=192.168.0.3
+      - PIHOLE_PASSWORD=XXXXXXXXXXXXXXX
+      - INTERVAL=30s
+      - PORT=9617
+
+  prometheus:
+    build: .\prometheus
+    ports:
+        - "9090:9090"
+    networks:
+      - piholenet
+      
+  grafana:
+    build: .\grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - piholenet
+    environment:
+      - DS_PROMETHEUS=prometheus
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+
+networks:
+  piholenet:

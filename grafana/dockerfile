@@ -1,0 +1,8 @@
+FROM grafana/grafana:master
+
+ADD --chown=grafana:grafana https://raw.githubusercontent.com/eko/pihole-exporter/master/grafana/dashboard.json /var/lib/grafana/dashboards/pihole.json
+RUN sed -i 's/\${DS_PROMETHEUS}/prometheus/g' /var/lib/grafana/dashboards/pihole.json
+
+ADD dashboards.yml /etc/grafana/provisioning/dashboards/
+
+ADD datasources.yml /etc/grafana/provisioning/datasources/
