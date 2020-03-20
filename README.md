@@ -1,7 +1,7 @@
 # PiHole-DockerConfig
 Various docker and config files used to spin up a working copy of pihole with a grafana dashboard
 
-It took me hours to get all of this figured out, so I figured I would try and help out the next person that wants to get all of this up a nd running.
+It took me hours to get all of this figured out, so I figured I would try and help out the next person that wants to get all of this up and running.
 
 This set of config files will get the following docker containers up and running:
 (assumes you already have Pi-Hole running)
