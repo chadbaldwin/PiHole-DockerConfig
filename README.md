@@ -14,3 +14,6 @@ This set of config files will get the following docker containers up and running
 - Grafana
   - https://grafana.com/docs/grafana/latest/installation/docker/
   - https://hub.docker.com/r/grafana/grafana/
+
+Note...
+To get this up and running, make sure you edit the docker-compose.yml file with the IP address and password for your Pi-Hole server.
